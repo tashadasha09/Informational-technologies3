@@ -21,6 +21,46 @@
             margin-bottom: 30px;
             text-align: center;
         }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .menu-button {
+            background-color: #4474C6;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .menu-button:hover {
+            background-color: #355A9E;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background-color: #355A9E;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .menu-content a {
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+        .menu-content a:hover {
+            background-color: #2B4D73;
+        }
+        .menu:hover .menu-content {
+            display: block;
+        }
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -29,7 +69,7 @@
         }
         .button {
             background-color: #4474C6;
-            color:#FFFFFF;
+            color: #FFFFFF;
             padding: 20px;
             border: none;
             border-radius: 10px;
@@ -43,6 +83,16 @@
     </style>
 </head>
 <body>
+    <div class="menu">
+        <button class="menu-button">Меню</button>
+        <div class="menu-content">
+            <a href="#">Розділ 1</a>
+            <a href="#">Розділ 2</a>
+            <a href="#">Розділ 3</a>
+            <a href="#">Розділ 4</a>
+            <a href="#">Розділ 5</a>
+        </div>
+    </div>
     <h1 class="title">Вітаємо вас на сайті ЦК інформаційних технологій</h1>
     <div class="container">
         <button class="button">Новини ЦК</button>
