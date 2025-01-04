@@ -9,17 +9,7 @@
             background-color: #477BA7;
             font-family: Arial, sans-serif;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .title {
-            color: #FFFFFF;
-            font-size: 24px;
-            margin-bottom: 30px;
-            text-align: center;
+            padding: 0;
         }
         .menu {
             position: absolute;
@@ -61,11 +51,24 @@
         .menu:hover .menu-content {
             display: block;
         }
+        .section {
+            display: none;
+            padding: 20px;
+            background-color: #355A9E;
+            color: #FFFFFF;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        .section.active {
+            display: block;
+        }
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             text-align: center;
+            margin: 50px auto;
         }
         .button {
             background-color: #4474C6;
@@ -80,42 +83,51 @@
         .button:hover {
             background-color: #355A9E;
         }
-        .specialty-content {
-            background-color: #355A9E;
-            color: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            max-width: 800px;
-            text-align: justify;
-        }
     </style>
 </head>
 <body>
+    <!-- Меню -->
     <div class="menu">
         <button class="menu-button">Меню</button>
         <div class="menu-content">
+            <a href="#" onclick="showSection('home')">Головна</a>
+            <a href="#" onclick="showSection('specialty')">Все про спеціальність</a>
             <a href="#">Підготовка до екзамену</a>
             <a href="#">Про відомих програмістів</a>
-            <a href="#">Мови програмування</a>
-            <a href="#">Gasper</a>
-            <a href="#specialty">Все про спеціальність</a>
-            <a href="#">Технічна підтримка</a>
         </div>
     </div>
-    <h1 class="title">Вітаємо вас на сайті ЦК інформаційних технологій!</h1>
-    <!-- Зображення -->
-    <img src="https://raw.githubusercontent.com/tashadasha09/Informational-technologies3/main/Screenshot_20241211_140247_Chrome.jpg" alt="Головна1" style="width: 100%; max-width: 500px; margin-bottom: 20px;">
-    <div class="container">
-        <button class="button">Новини ЦК</button>
-        <button class="button">Контакти ЦК</button>
-        <button class="button">Актуальні опитування</button>
+
+    <!-- Головна секція -->
+    <div id="home" class="section active">
+        <h1 class="title">Вітаємо вас на сайті ЦК інформаційних технологій!</h1>
+        <img src="https://raw.githubusercontent.com/tashadasha09/Informational-technologies3/main/Screenshot_20241211_140247_Chrome.jpg" alt="Головна1" style="width: 100%; max-width: 500px; margin-bottom: 20px;">
+        <div class="container">
+            <button class="button">Новини ЦК</button>
+            <button class="button">Контакти ЦК</button>
+            <button class="button">Актуальні опитування</button>
+        </div>
     </div>
-    <div id="specialty" class="specialty-content">
-        <h2>Все про спеціальність</h2>
-        <p>У сучасному світі, де технології швидко розвиваються та змінюються, програмування стає важливим інструментом для вирішення різноманітних завдань. Програміст – це професія майбутнього</p>
+
+    <!-- Секція про спеціальність -->
+    <div id="specialty" class="section">
+        <h1>Все про спеціальність</h1>
+        <p>У сучасному світі, де технології швидко розвиваються та змінюються, програмування стає важливим інструментом для вирішення різноманітних завдань. Програміст – це професія майбутнього...</p>
+        <p>IT-сфера є динамічною галуззю, що передбачає безмежні можливості для розвитку...</p>
     </div>
+
+    <!-- Сценарій -->
+    <script>
+        function showSection(sectionId) {
+            // Ховаємо всі секції
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Показуємо потрібну секцію
+            const sectionToShow = document.getElementById(sectionId);
+            if (sectionToShow) {
+                sectionToShow.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
-
-
