@@ -93,7 +93,7 @@
             <a href="#" onclick="showSection('home')">Головна</a>
             <a href="#" onclick="showSection('specialty')">Все про спеціальність</a>
             <a href="#">Підготовка до екзамену</a>
-            <a href="#">Про відомих програмістів</a>
+            <a href="#" onclick="showSection('programmers')">Про відомих програмістів</a>
         </div>
     </div>
 
@@ -143,20 +143,17 @@
 <p>Цей розділ присвячений відомим програмістам – людям, які створили мови програмування, розробили перші операційні системи, подарували світу інтернет і значно вплинули на розвиток сучасного суспільства. Їхні історії – це не лише біографії, а й натхнення для нових поколінь фахівців, які прагнуть досягти висот у сфері інформаційних технологій. 
 
 Давайте разом зануримося у світ видатних особистостей, які назавжди змінили майбутнє.</p>
-
-    
+</div>
     <script>
-        function showSection(sectionId) {
-            // Ховаємо всі секції
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => section.classList.remove('active'));
 
-            // Показуємо потрібну секцію
-            const sectionToShow = document.getElementById(sectionId);
-            if (sectionToShow) {
-                sectionToShow.classList.add('active');
-            }
+        const sectionToShow = document.getElementById(sectionId);
+        if (sectionToShow) {
+            sectionToShow.classList.add('active');
         }
+    }
     </script>
 </body>
 </html>
